@@ -1,4 +1,3 @@
-import { CosmicLogo } from '@/configs/icons'
 import MenuItems from './MenuItems'
 
 const Footer = () => {
@@ -9,20 +8,16 @@ const Footer = () => {
       </div>
       <div className="flex flex-col-reverse md:flex-row items-center md:justify-between gap-y-6 md:gap-y-0">
         <span className="text-sm">
-          &copy; {new Date().getFullYear()} Developer Portfolio All Rights
-          Reserved.
+          &copy; {new Date().getFullYear()} Beni Biantuadi — Tous droits réservés.
         </span>
-        <span className="flex items-center text-sm">
-          Powered by
-          <a
-            href="https://www.cosmicjs.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="ml-2"
-          >
-            <CosmicLogo />
-          </a>
-        </span>
+        <a
+          href="https://www.linkedin.com/in/beni-biantuadi-022585201/"
+          target="_blank"
+          rel="noreferrer"
+          className="text-sm underline hover:text-accent transition-colors"
+        >
+          LinkedIn
+        </a>
       </div>
     </footer>
   )

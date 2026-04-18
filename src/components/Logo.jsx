@@ -2,17 +2,16 @@ import Link from 'next/link'
 
 const Logo = () => {
   return (
-    (<Link
+    <Link
       href="/"
       aria-label="Website logo, go back to homepage."
-      className="flex items-center border-white group focus-visible:outline-accent">
-
-      <div className="overflow-hidden transition ease-in-out rounded-full  hover:opacity-60">
-        <span className="text-sm">cosmicjs</span>
-        <span className="text-sm text-accent">.com</span>
+      className="flex items-center border-white group focus-visible:outline-accent"
+    >
+      <div className="overflow-hidden transition ease-in-out rounded-full hover:opacity-60">
+        <span className="text-sm">Beni</span>{' '}
+        <span className="text-sm text-accent">Biantuadi</span>
       </div>
-
-    </Link>)
-  );
+    </Link>
+  )
 }
 export default Logo
