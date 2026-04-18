@@ -2,11 +2,11 @@
 import { useState } from 'react'
 import PostList from './PostList'
 
-const FilteredPosts = ({ posts, categories, postType }) => {
+const FilteredPosts = ({ posts = [], categories = [], postType }) => {
   const [filterCategory, setFilterCategory] = useState('All')
 
   const filteredPosts = posts?.filter(
-    post => post.metadata.category.title === filterCategory
+    post => post?.metadata?.category?.title === filterCategory
   )
   return (
     <>

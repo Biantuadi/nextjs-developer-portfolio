@@ -1,5 +1,5 @@
 import { LetterIcon } from '@/configs/icons'
-import { sanitize } from 'isomorphic-dompurify'
+import sanitizeHtml from 'sanitize-html'
 
 const ContactSection = ({ heading, bodyText, email, linkedin }) => {
   return (
@@ -13,7 +13,7 @@ const ContactSection = ({ heading, bodyText, email, linkedin }) => {
       <div
         className="text-fore-subtle my-3 text-center space-y-4"
         dangerouslySetInnerHTML={{
-          __html: sanitize(bodyText),
+          __html: sanitizeHtml(bodyText || ''),
         }}
       />
       <a

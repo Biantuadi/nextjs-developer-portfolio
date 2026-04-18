@@ -9,10 +9,18 @@ import getMetadata from 'helpers/getMetadata'
 
 const siteSettings = await getSiteSettings()
 const enableRobots = getMetadata(siteSettings?.metadata?.enable_robots, false)
-const siteUrl = getMetadata(siteSettings?.metadata?.site_url)
+const siteUrl = getMetadata(siteSettings?.metadata?.site_url, 'http://localhost:3000')
+
+const metadataBase = (() => {
+  try {
+    return new URL(siteUrl)
+  } catch {
+    return new URL('http://localhost:3000')
+  }
+})()
 
 export const metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase,
   icons: {
     icon: '/favicon/icon.ico',
     shortcut: '/favicon/shortcut-icon.png',

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { getPageBySlug } from '@/lib/cosmic'
 import Socials from '@/components/Socials'
-import { sanitize } from 'isomorphic-dompurify'
+import sanitizeHtml from 'sanitize-html'
 import getMetadata from 'helpers/getMetadata'
 
 const fallbackAboutData = {
@@ -115,7 +115,7 @@ const AboutPage = async () => {
             <div
               className="text-fore-primary mb-8 space-y-4"
               dangerouslySetInnerHTML={{
-                __html: sanitize(pageData?.content),
+                __html: sanitizeHtml(pageData?.content || ''),
               }}
             />
             <Socials
