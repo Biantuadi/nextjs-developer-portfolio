@@ -2,7 +2,7 @@ import Date from './Date'
 import Link from 'next/link'
 import { ForwardArrowIcon } from '@/configs/icons'
 
-const PostList = ({ allPosts, postType, home }) => {
+const PostList = ({ allPosts = [], postType, home }) => {
   return <>
     <ul
       className={!home ? 'grid grid-cols-1 md:grid-cols-2 gap-8' : undefined}
@@ -14,7 +14,7 @@ const PostList = ({ allPosts, postType, home }) => {
               ? 'py-5'
               : 'flex flex-col bg-white dark:bg-gray-800 rounded shadow-sm hover:shadow-md transition-all relative'
           }
-          key={post.title}
+          key={post.slug || post.title}
         >
           <Link
             href={`/${postType}/${post.slug}`}
@@ -34,7 +34,7 @@ const PostList = ({ allPosts, postType, home }) => {
                 )}
               </h3>
               <p className="text-fore-subtle mb-3 lg:mb-0 lg:pr-6">
-                {post.metadata.excerpt}
+                {post?.metadata?.excerpt || ''}
               </p>
             </div>
             {home ? (

@@ -7,13 +7,14 @@ const Header = () => {
   return (
     <>
       <div className="mt-12 p-2 md:mt-0 text-center border-b bg-white dark:bg-black text-sm">
-        The source code for this portfolio is{' '}
+        Portfolio de Beni Biantuadi —{' '}
         <a
-          href="https://github.com/cosmicjs/nextjs-developer-portfolio"
-          target="_parent"
+          href="https://www.linkedin.com/in/beni-biantuadi-022585201/"
+          target="_blank"
+          rel="noreferrer"
           className="underline hover:text-accent transition-colors"
         >
-          available on GitHub
+          me contacter sur LinkedIn
         </a>
         .
       </div>
